@@ -15,7 +15,7 @@ public class CurrencyService {
     @Value("${external.api.url}")
     private String apiUrl;
     public String converter(Currencies from, Currencies to, Double amount) {
-        String url = apiUrl + from;
+        String url = apiUrl + from.toString();
 
         RestTemplate restTemplate = new RestTemplate();
         ExchangeRateResponse exchangeRateResponse = restTemplate.getForObject(url, ExchangeRateResponse.class);
